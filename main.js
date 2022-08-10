@@ -27,6 +27,7 @@ function onClickCreateNumBtn () {
   }
 }
 
+//입력값 제출
 function onSubmitAnswer(event) {
   event.preventDefault();
   if(answer.length !== 0) {
@@ -72,11 +73,16 @@ function isAnswer (inputVal) {
     div.innerText = `Homerun !! the answer is : ${answer.join('')}`
     div.classList.add('winner-message');
     $logs.appendChild(div);
-  } else {
+  } 
+  else if (trial === 10) {
+    return alert(`You lose ㅠㅠ there's no life left// the answer is ${answer.join('')}`)
+  }
+  else {
     logHandler(inputVal);
   }
 }
 
+//정답과의 비교를 통한 log 출력
 function logHandler(inputVal) {
   let strike = 0;
   let ball = 0;
@@ -89,13 +95,11 @@ function logHandler(inputVal) {
       else if(i !== j && answer[i] === Number(inputVal[j])) {
         ball++;
       }
-      else {
-        out++;
-      }
     }
   }
+  out = 4 - (strike + ball);
   const div = document.createElement('div');
-  div.innerText = `${trial} : ${inputVal} ➡ ${strike}S ${ball}B ${4-(16-out)}O`
+  div.innerText = `${trial} : ${inputVal} ➡ ${strike}S ${ball}B ${out}O (Life : ${10-trial})`
   div.classList.add('log-message');
   $logs.appendChild(div);
 }
