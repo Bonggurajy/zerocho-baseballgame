@@ -1,0 +1,19 @@
+.create-number-btn {
+  position: absolute;
+  right: 50px;
+  top: 30px;
+
+}
+
+.winner-message {
+  background-color: greenyellow;
+}
+
+.logs {
+  margin-top: 30px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 960px;
+  height: 400px;
+}
