@@ -41,8 +41,6 @@ function onSubmitAnswer(event) {
       isAnswer(inputVal);
     }
     $answerInput.value = '';
-    console.log(inputVal);
-
   }
   else {
     alert('Please create a Random Number First !')
